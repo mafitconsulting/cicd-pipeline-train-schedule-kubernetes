@@ -2,14 +2,16 @@ kind: Service
 apiVersion: v1
 metadata:
   name: train-schedule-service
+  annotations:
+    prometheus.io/scrape: 'true'
 spec:
   type: NodePort
   selector:
     app: train-schedule
   ports:
   - protocol: TCP
-    port: 8081 
-    nodePort: 8081
+    port: 30000 
+    nodePort: 30000
 
 ---
 
